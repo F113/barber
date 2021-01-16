@@ -1,0 +1,36 @@
+class Human {
+	public isSelfShave;
+	public id;
+	public beard = true;
+	
+	function Human (id, isSelfShave) {
+		this.id = id;
+		this.isSelfShave = isSelfshave;
+	}
+	
+	// Human может побриться сам
+	function selfShave () {
+		this.beard = false;
+	}
+}
+
+class Barber extends Human {
+	
+	// Barber может брить Human
+	function shaveHuman (Human human) {
+		human.beard = false;
+	}
+}
+
+var human1 = new Human(1, true);
+var human2 = new Human(2, false);
+...
+var barber = new Barber(100, ?)
+
+if (human.isSelfShave) {
+human1.selfShave()
+}
+barber.shave(human1);
+barber.shave(human2);
+...
+barber.shave(barber);
